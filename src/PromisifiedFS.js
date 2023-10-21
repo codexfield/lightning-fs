@@ -2,6 +2,7 @@ const DefaultBackend = require("./DefaultBackend.js");
 const Stat = require("./Stat.js");
 
 const path = require("./path.js");
+const { GnfdClient } = require("./GnfdBackend.js");
 
 function cleanParamsFilepathOpts(filepath, opts, ...rest) {
   // normalize paths
@@ -74,6 +75,7 @@ module.exports = class PromisifiedFS {
   }
   async _init (name, options = {}) {
     await this._gracefulShutdown();
+    // console.log("name", name, options);
     if (this._activationPromise) await this._deactivate()
 
     if (this._backend && this._backend.destroy) {
@@ -151,6 +153,7 @@ module.exports = class PromisifiedFS {
     return this._deactivationPromise
   }
   async readFile(filepath, opts) {
+    // console.log('this is read file')
     return this._backend.readFile(filepath, opts);
   }
   async writeFile(filepath, data, opts) {
@@ -162,6 +165,9 @@ module.exports = class PromisifiedFS {
     return null
   }
   async readdir(filepath, opts) {
+    // console.log('readdir: ' + filepath, opts);
+    // console.log('res', res);
+
     return this._backend.readdir(filepath, opts);
   }
   async mkdir(filepath, opts) {

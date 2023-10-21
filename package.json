@@ -12,16 +12,19 @@
   },
   "scripts": {
     "test": "karma start --single-run",
+    "dev": "webpack -w",
     "build": "webpack",
     "semantic-release": "semantic-release"
   },
   "dependencies": {
+    "@bnb-chain/greenfield-js-sdk": "^1.0.0",
     "@isomorphic-git/idb-keyval": "3.3.2",
     "isomorphic-textencoder": "1.0.1",
     "just-debounce-it": "1.1.0",
     "just-once": "1.1.0"
   },
   "devDependencies": {
+    "browserify-zlib": "^0.2.0",
     "karma": "^6.4.2",
     "karma-browserstack-launcher": "^1.5.1",
     "karma-chrome-launcher": "3.1.0",

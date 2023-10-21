@@ -35,6 +35,7 @@ module.exports = class FS {
     return this.promises.init(name, options)
   }
   readFile(filepath, opts, cb) {
+    // console.log("this readfile");
     const [resolve, reject] = wrapCallback(opts, cb);
     this.promises.readFile(filepath, opts).then(resolve).catch(reject)
   }
@@ -47,6 +48,7 @@ module.exports = class FS {
     this.promises.unlink(filepath, opts).then(resolve).catch(reject);
   }
   readdir(filepath, opts, cb) {
+    // console.log('this readdir')
     const [resolve, reject] = wrapCallback(opts, cb);
     this.promises.readdir(filepath, opts).then(resolve).catch(reject);
   }
