@@ -2,8 +2,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "name": "@isomorphic-git/lightning-fs",
-  "version": "0.0.0-development",
+  "name": "@codexfield/lightning-fs",
+  "version": "0.0.1",
   "description": "A lean and fast 'fs' for the browser",
   "main": "src/index.js",
   "unpkg": "dist/lightning-fs.min.js",
